@@ -2,7 +2,7 @@ How to run this Container
 
 Create auth files: 
 
-- __$DAV_SVN_CONF/dav_svn.authz__
+__$DAV_SVN_CONF/dav_svn.authz__
 
     [groups]
     admin = testuser
@@ -15,9 +15,10 @@ Create auth files:
     [project2:/]
     @gruppe2 = rw
 
-- __$DAV_SVN_CONF/dav_svn.passwd__
+__$DAV_SVN_CONF/dav_svn.passwd__
 
 Username: testuser
+
 Passwort: test
 
     testuser:$apr1$A2fjdj5R$hx9HvwAuj.i5niRjHEMnA.
