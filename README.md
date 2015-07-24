@@ -17,7 +17,9 @@ Create auth files:
 
 - __$DAV_SVN_CONF/dav_svn.passwd__
 
-    # testuser:test
+Username: testuser
+Passwort: test
+
     testuser:$apr1$A2fjdj5R$hx9HvwAuj.i5niRjHEMnA.
 
 Run the container
