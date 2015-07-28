@@ -19,10 +19,11 @@ ADD files/dav_svn.conf /etc/apache2/mods-available/dav_svn.conf
 
 ADD files/svn-backuper.sh /usr/local/bin/
 ADD files/svn-project-creator.sh /usr/local/bin/
+ADD files/svn-entrypoint.sh /usr/local/bin/
 
 RUN chmod a+x /usr/local/bin/svn*
 
 RUN echo "*/10 * * * *	root    /usr/local/bin/svn-project-creator.sh" >> /etc/crontab
 RUN echo "0 * * * *	root    /usr/local/bin/svn-backuper.sh" >> /etc/crontab
 
-RUN sed -i 's/# exec CMD/&\nchown -R www-data:www-data "\/var\/local\/svn\/"\ncron -f \&/g' /opt/entrypoint.sh
+RUN sed -i 's/# exec CMD/&\nsvn-entrypoint.sh/g' /opt/entrypoint.sh
