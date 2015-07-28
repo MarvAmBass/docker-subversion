@@ -22,7 +22,7 @@ Create authz file like this example:
 __$DAV_SVN_CONF/dav_svn.authz__
 
     [groups]
-    admin = user1,user2
+    admin = user1,user2, testuser
     devgroup = user5, user6
 
     [project1:/]
