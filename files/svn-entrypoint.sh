@@ -26,7 +26,7 @@ then
 # disable protection - everybody can do what he wants
 [/]
 * = rw
-    EOF
+EOF
 fi
 
 if [ ! -f /etc/apache2/dav_svn/dav_svn.passwd ]
