@@ -27,3 +27,5 @@ RUN echo "*/10 * * * *	root    /usr/local/bin/svn-project-creator.sh" >> /etc/cr
 RUN echo "0 0 * * *	root    /usr/local/bin/svn-backuper.sh" >> /etc/crontab
 
 RUN sed -i 's/# exec CMD/&\nsvn-entrypoint.sh/g' /opt/entrypoint.sh
+
+VOLUME ["/var/local/svn", "/var/svn-backup", "/etc/apache/dav_svn"]
