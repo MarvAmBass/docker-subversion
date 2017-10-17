@@ -46,11 +46,11 @@ __$DAV_SVN_CONF/dav_svn.passwd__
 
 To add a new User like 'testuser' with password 'test' use the following command
 
-    htpasswd -c $DAV_SVN_CONF/dav_svn.passwd testuser
+    htdigest -c $DAV_SVN_CONF/dav_svn.passwd Subversion testuser
 
 Or if you're to lazy, just use this line for your file (for testing only!)
 
-    testuser:$apr1$A2fjdj5R$hx9HvwAuj.i5niRjHEMnA.
+    testuser:Subversion:5d1b8d8c9a69af4b0180cdafe09cb907
 
 ## Run the container
 
