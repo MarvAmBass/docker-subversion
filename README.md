@@ -46,7 +46,7 @@ __$DAV_SVN_CONF/dav_svn.passwd__
 
 To add a new User like 'testuser' with password 'test' use the following command
 
-    htdigest -c $DAV_SVN_CONF/dav_svn.passwd testuser
+    htdigest -c $DAV_SVN_CONF/dav_svn.passwd Subversion testuser
 
 Or if you're to lazy, just use this line for your file (for testing only!)
 
