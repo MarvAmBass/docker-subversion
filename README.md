@@ -7,10 +7,18 @@ _maintained by MarvAmBass_
 
 A Docker Subversion Apache2 Container (based on marvambass/apache2-ssl-php).
 
-It gives you automatically daily dumps of your SVN Repos for your Backup.
-Also you are able to create a new Project by just adding a new Folder to your repository root directory.
+Features automatic daily dumps of your SVN Repos for Backup purposes.
 
 You can control the access of your Project with a htpasswd file in combination with a authz file.
+
+## Creating a project
+
+You are able to create a new Project by simply adding a new Folder to your repository root directory (`/var/local/svn`).
+A cron running every 10 minutes will eventually pick it up.
+
+## How to access your repository
+
+By defdault the repository is host on `/svn`, so for instance you can checkout `yourRepo` using `svn checkout http://yourDockerIp/svn/yourRepo`
 
 
 ## pre run configuration (optional)
