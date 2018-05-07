@@ -28,4 +28,4 @@ RUN echo "0 0 * * *	root    /usr/local/bin/svn-backuper.sh" >> /etc/crontab
 
 RUN sed -i 's/# exec CMD/&\nsvn-entrypoint.sh/g' /opt/entrypoint.sh
 
-VOLUME ["/var/local/svn", "/var/svn-backup", "/etc/apache/dav_svn"]
+VOLUME ["/var/local/svn", "/var/svn-backup", "/etc/apache2/dav_svn"]
