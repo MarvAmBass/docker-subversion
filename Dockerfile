@@ -1,12 +1,13 @@
-FROM marvambass/apache2-ssl-php
+FROM murks/apache2-ssl-secure
 MAINTAINER MarvAmBass
 
 ENV LANG C.UTF-8
 
 RUN apt-get update && apt-get install -y \
     subversion \
-    libapache2-svn \
-    apache2-mpm-prefork
+    cron \
+    libapache2-mod-svn \
+    apache2
 
 RUN a2enmod dav_svn
 RUN a2enmod auth_digest
@@ -26,6 +27,6 @@ RUN chmod a+x /usr/local/bin/svn*
 RUN echo "*/10 * * * *	root    /usr/local/bin/svn-project-creator.sh" >> /etc/crontab
 RUN echo "0 0 * * *	root    /usr/local/bin/svn-backuper.sh" >> /etc/crontab
 
-RUN sed -i 's/# exec CMD/&\nsvn-entrypoint.sh/g' /opt/entrypoint.sh
+RUN sed -i '/#\!.*$/a \/usr\/local\/bin/svn-entrypoint.sh'  /container/scripts/entrypoint.sh
 
 VOLUME ["/var/local/svn", "/var/svn-backup", "/etc/apache2/dav_svn"]

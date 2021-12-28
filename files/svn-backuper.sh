@@ -1,5 +1,7 @@
 #!/bin/bash
-
+if [ ! -d /var/svn-backup/ ]; then
+  exit 0
+fi
 # variables
 SVNDIR="/var/local/svn/"
 BACKUPDIR="/var/svn-backup"
