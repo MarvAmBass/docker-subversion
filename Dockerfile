@@ -1,4 +1,4 @@
-FROM murks/apache2-ssl-secure
+FROM marvambass/apache2-ssl-secure
 MAINTAINER MarvAmBass
 
 ENV LANG C.UTF-8
