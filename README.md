@@ -5,7 +5,7 @@ _maintained by MarvAmBass_
 
 ## What is it
 
-A Docker Subversion Apache2 Container (based on marvambass/apache2-ssl-php).
+A Docker Subversion Apache2 Container (based on `ghcr.io/marvambass/apache2-ssl-php`).
 
 Features automatic daily dumps of your SVN Repos for Backup purposes.
 
@@ -29,6 +29,7 @@ Create authz file like this example:
 
 __$DAV_SVN_CONF/dav_svn.authz__
 
+```
     [groups]
     admin = user1,user2, testuser
     devgroup = user5, user6
@@ -48,23 +49,29 @@ __$DAV_SVN_CONF/dav_svn.authz__
     # everybody is able to read repos and sees all projects
     [/]
     * = r
-    
+```    
 
 __$DAV_SVN_CONF/dav_svn.passwd__
 
 To add a new User like 'testuser' with password 'test' use the following command
 
+```
     htdigest -c $DAV_SVN_CONF/dav_svn.passwd Subversion testuser
+```
 
 Or if you're to lazy, just use this line for your file (for testing only!)
 
+```
     testuser:Subversion:5d1b8d8c9a69af4b0180cdafe09cb907
+```
 
 ## Run the container
 
+```
     docker run \
     -d \
     -v $SVN:/var/local/svn \
     -v $SVN_BACKUP:/var/svn-backup \
     -v $DAV_SVN_CONF/:/etc/apache2/dav_svn/ \
-    --name subversion marvambass/subversion \
+    --name subversion ghcr.io/marvambass/subversion
+```

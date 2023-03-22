@@ -1,5 +1,4 @@
 FROM marvambass/apache2-ssl-php
-MAINTAINER MarvAmBass
 
 ENV LANG C.UTF-8
 
