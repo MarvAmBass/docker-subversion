@@ -1,4 +1,4 @@
-FROM marvambass/apache2-ssl-php
+FROM ghcr.io/servercontainers/apache2-ssl-secure
 
 ENV LANG C.UTF-8
 

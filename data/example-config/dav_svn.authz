@@ -1,0 +1,19 @@
+[groups]
+admin = user1,user2, testuser
+devgroup = user5, user6
+
+[project1:/]
+@admin = rw
+@devgroup = r
+
+# devgroup members are able to read and write on project2
+[project2:/]
+@devgroup = rw
+
+# admins have control over every project - and can list all projects on the root point
+[/]
+@admin = rw
+
+# everybody is able to read repos and sees all projects
+[/]
+* = r

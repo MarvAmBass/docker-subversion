@@ -5,11 +5,31 @@ _maintained by MarvAmBass_
 
 ## What is it
 
-A Docker Subversion Apache2 Container (based on `ghcr.io/marvambass/apache2-ssl-php`).
+A Docker Subversion Apache2 Container (based on `ghcr.io/servercontainers/apache2-ssl-secure`).
 
 Features automatic daily dumps of your SVN Repos for Backup purposes.
 
 You can control the access of your Project with a htpasswd file in combination with a authz file.
+
+## Build & Variants
+
+You can specify `DOCKER_REGISTRY` environment variable (for example `my.registry.tld`)
+and use the build script to build the main container and it's variants for _x86_64, arm64 and arm_
+
+You'll find all images tagged like `d11.2-s1.2.1-2.1` which means `d<debian version>-s<subversion version (with some esacped chars)>`.
+This way you can pin your installation/configuration to a certian version. or easily roll back if you experience any problems
+(don't forget to open a issue in that case ;D).
+
+To build a `latest` tag run `./build.sh release`
+
+## Changelogs
+
+* 2023-03-22
+    * github action to build container
+    * implemented ghcr.io as new registry
+    * added example config and `docker-compose.yml`
+    * new baseimage `ghcr.io/servercontainers/apache2-ssl-secure`
+
 
 ## Creating a project
 

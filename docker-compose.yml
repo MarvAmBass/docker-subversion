@@ -1,0 +1,14 @@
+version: '3.3'
+
+services:
+
+  subversion:
+    build: .
+    image: ghcr.io/marvambass/subversion
+    restart: always
+    volumes:
+      - ./data/data/backup:/var/local/svn
+      - ./data/data/svn:/var/svn-backup
+      - ./data/example-config:/etc/apache2/dav_svn/
+    ports:
+      - "8080:80"
