@@ -4,7 +4,7 @@ ENV LANG C.UTF-8
 
 RUN apt-get update && apt-get install -y \
     subversion \
-    libapache2-svn \
+    libapache2-mod-svn \
     apache2-mpm-prefork
 
 RUN a2enmod dav_svn
