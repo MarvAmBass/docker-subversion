@@ -1,7 +1,5 @@
-# Docker Subversion Server based on secured Apache SSL PHP on Ubuntu 14.04
+# Subversion Container (ghcr.io/marvambass/subversion) based on secured Apache SSL PHP on debian:bullseye [x86 + arm]
 _maintained by MarvAmBass_
-
-[FAQ - All you need to know about the marvambass Containers](https://marvin.im/docker-faq-all-you-need-to-know-about-the-marvambass-containers/)
 
 ## What is it
 
