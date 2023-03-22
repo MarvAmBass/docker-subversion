@@ -4,9 +4,8 @@ ENV LANG C.UTF-8
 
 RUN apt-get update && apt-get install -y \
     subversion \
-    libapache2-mod-svn \
-    apache2-mpm-prefork
-
+    libapache2-mod-svn
+    
 RUN a2enmod dav_svn
 RUN a2enmod auth_digest
 
@@ -25,6 +24,6 @@ RUN chmod a+x /usr/local/bin/svn*
 RUN echo "*/10 * * * *	root    /usr/local/bin/svn-project-creator.sh" >> /etc/crontab
 RUN echo "0 0 * * *	root    /usr/local/bin/svn-backuper.sh" >> /etc/crontab
 
-RUN sed -i 's/# exec CMD/&\nsvn-entrypoint.sh/g' /opt/entrypoint.sh
+RUN sed -i 's/# CMD/&\n echo "$@" | grep runit && svn-entrypoint.sh/g' /container/scripts/entrypoint.sh
 
 VOLUME ["/var/local/svn", "/var/svn-backup", "/etc/apache2/dav_svn"]
